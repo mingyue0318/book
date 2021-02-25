@@ -31,6 +31,7 @@
     // 字符串
     a.charAt(1)
     a.toUpperCase()
+    a.split('').reverse().join()
 }
 {
     // 数组+字符串
@@ -39,5 +40,7 @@
     length
 }
 {
-    
+    var num = 1234
+    num.toExponential()
+    num.toFixed()
 }
