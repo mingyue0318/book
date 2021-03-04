@@ -148,3 +148,122 @@
         }
     }
 }
+{
+    for(var item in obj){
+
+    }
+
+    for(var key of Object.keys(obj)){
+
+    }
+}
+{
+    // iterable
+    一个可以在其值上迭代的迭代器对象
+    function *something() {
+        try{
+            var nextVal;
+            while(true){
+                if(nextVal === undefined){
+                    nextVal = 1
+                }else{
+                    nextVal = (3*nextVal)+6
+                }
+                yield nextVal
+            }
+        }
+        finally{
+            console.log("clearing up!")
+        }
+    }
+    var it = something()
+    for(var k of it){
+        console.log(k);
+        if(v>500){
+            console.log(it.return("Hello World!").value);
+        }
+    }
+}
+
+{
+    // 生成器  异步  回调
+    function foo(x,y,cb) {
+        ajax('http://some.url.1/?x='+x+'&y'+y,cb)
+    }
+
+
+    foo(11,12,function (err,text) {
+        if(err){
+            console.error(err);
+        }else{
+            console.log(text)
+        }
+
+    })
+
+}
+{
+    function foo(x,y){
+        ajax('http://some.url.1/?x='+x+'&y'+y,function (err,data) {
+            if(err){
+                it.throw(err);
+            }else{
+                it.next(data)  //酷
+            }
+        })
+    }
+    function *main() {
+        try{
+            var text = yield foo(11,31); // 精髓
+            console.log(text);
+        }
+        catch(err){
+            console.error(err);
+        }
+    }
+    var it = main();
+
+    it.next()
+}
+{
+    function *main() {
+        var x = yield 'Hello World!';
+        console.log(x);
+    }
+
+    var it = main();
+    it.next()
+    try{
+        it.throw('Oops!')
+    }catch(err){
+        console.log('err',err)
+    }
+}
+
+
+function ajax(url,resolve){
+    var xhr = new XMLHttpRequest();
+    xhr.open('get',url)
+ 
+    xhr.send();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status ===200){
+            resolve(xhr.responseText)
+        }
+    }
+}
+// 生成器 + Promise
+function request(url){
+    return new Promise(function (resolve,reject) {
+            ajax(url,resolve)
+    })
+}
+{
+    request('http://some.url.1/')
+        .then(function(response1){
+                return request('http://some.url.2/?v='+response1)
+                        .then(function(response2){
+                                    console.log(response2)
+                              })
+             })
+}
