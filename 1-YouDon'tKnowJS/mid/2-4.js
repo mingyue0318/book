@@ -240,7 +240,7 @@
     }
 }
 
-
+// 生成器 + Promise
 function ajax(url,resolve){
     var xhr = new XMLHttpRequest();
     xhr.open('get',url)
@@ -252,7 +252,6 @@ function ajax(url,resolve){
         }
     }
 }
-// 生成器 + Promise
 function request(url){
     return new Promise(function (resolve,reject) {
             ajax(url,resolve)
@@ -267,3 +266,118 @@ function request(url){
                               })
              })
 }
+
+{
+    function foo(x,y){
+        return request('http://some.url.1/?x='+x+'&y='+y)
+    };
+    foo(11,13).then(function(text){
+        console.log(text);
+    },function(err){
+        console.error(err);
+    })
+}
+{
+    function foo(x,y){
+        return request('http://some.url.1/?x='+x+'&y='+y);
+    }
+
+    function *main(){
+        try{
+            var text = yield foo(11,13);
+            console.log(text);
+        }
+        catch(err){
+            console.error(err);
+        }
+    }
+
+    var it = main();
+
+    var p = it.next().value
+
+    p.then(function(data){
+        console.log(data);
+    },function(err){
+        console.log(err);
+    })
+}
+
+{
+    function run(gen){
+        var args = [].slice.call(arguments,1),it;
+
+        it = gen.apply(this.args);
+
+        return Promise.resolve().then(function handleResult(value){
+            var next = it.next(value);
+
+            return (function handleNext(value){
+                if(next.done){
+                    return value;
+                }
+                else{
+                    return Promise.resolve(next.value).then(handleNext,function handleError(err){
+                        return Promise.reject(it.throw(err).then(handleResult))
+                    })
+                }
+            })(next)
+        })
+    }
+}
+
+{
+
+    function foo(x,y){
+        return request('http://some.url.1/?x='+x+'&y='+y)
+    };
+
+    async function main() {
+        try{
+            var text = await foo(11,14);
+
+        }
+        catch(err){
+
+        }
+    }
+    main()
+
+}
+
+{
+    function *foo(){
+        var r1 =yield request('http://some.url.1/');
+        var r2 =yield request('http://some.url.2/');
+        var r3 =yield request('http://some.url.2/?v='+r1 +','+r2);
+
+        console.log(r3);
+    }
+}
+{
+    function *foo(){
+        var r1 = request('http://some.url.1/');
+        var r2 = request('http://some.url.2/');
+
+        var p1 = yield r1;
+        var p2 = yield r2;
+
+        var r3 =yield request('http://some.url.2/?v='+p1 +','+p2);
+
+    }
+}
+{
+    function *foo(){
+        var results =yield Promise.all([request('http://some.url.1/'),request('http://some.url.2/')]);
+
+        // var r1 = results[0];
+        // var r2 = results[1];
+        var [r1,r2] = results;
+
+        var r3 =yield request('http://some.url.2/?v='+r1 +','+r2);
+
+    }
+}
+
+
+run(foo);
