@@ -131,55 +131,53 @@
     something.next().value; // 9 
     something.next().value; // 33 
     something.next().value; // 105
-}
-{
-    for(var v of something){
+} {
+    for (var v of something) {
         console.log(v);
 
-        if(v>500){
+        if (v > 500) {
             break;
         }
     }
-    for(var ret;(ret = something.next())&& !ret.done;){
+    for (var ret;
+        (ret = something.next()) && !ret.done;) {
         console.log(ret.value)
 
-        if(ret.value>500){
+        if (ret.value > 500) {
             break;
         }
     }
-}
-{
-    for(var item in obj){
+} {
+    for (var item in obj) {
 
     }
 
-    for(var key of Object.keys(obj)){
+    for (var key of Object.keys(obj)) {
 
     }
-}
-{
+} {
     // iterable
     一个可以在其值上迭代的迭代器对象
-    function *something() {
-        try{
+
+    function* something() {
+        try {
             var nextVal;
-            while(true){
-                if(nextVal === undefined){
+            while (true) {
+                if (nextVal === undefined) {
                     nextVal = 1
-                }else{
-                    nextVal = (3*nextVal)+6
+                } else {
+                    nextVal = (3 * nextVal) + 6
                 }
                 yield nextVal
             }
-        }
-        finally{
+        } finally {
             console.log("clearing up!")
         }
     }
     var it = something()
-    for(var k of it){
+    for (var k of it) {
         console.log(k);
-        if(v>500){
+        if (v > 500) {
             console.log(it.return("Hello World!").value);
         }
     }
@@ -187,76 +185,186 @@
 
 {
     // 生成器  异步  回调
-    function foo(x,y,cb) {
-        ajax('http://some.url.1/?x='+x+'&y'+y,cb)
+    function foo(x, y, cb) {
+        ajax('http://some.url.1/?x=' + x + '&y' + y, cb)
     }
 
 
-    foo(11,12,function (err,text) {
-        if(err){
+    foo(11, 12, function (err, text) {
+        if (err) {
             console.error(err);
-        }else{
+        } else {
             console.log(text)
         }
 
     })
 
-}
-{
-    function foo(x,y){
-        ajax('http://some.url.1/?x='+x+'&y'+y,function (err,data) {
-            if(err){
+} {
+    function foo(x, y) {
+        ajax('http://some.url.1/?x=' + x + '&y' + y, function (err, data) {
+            if (err) {
                 it.throw(err);
-            }else{
-                it.next(data)  //酷
+            } else {
+                it.next(data) //酷
             }
         })
     }
-    function *main() {
-        try{
-            var text = yield foo(11,31); // 精髓
+
+    function* main() {
+        try {
+            var text = yield foo(11, 31); // 精髓
             console.log(text);
-        }
-        catch(err){
+        } catch (err) {
             console.error(err);
         }
     }
     var it = main();
 
     it.next()
-}
-{
-    function *main() {
+} {
+    function* main() {
         var x = yield 'Hello World!';
         console.log(x);
     }
 
     var it = main();
     it.next()
-    try{
+    try {
         it.throw('Oops!')
-    }catch(err){
-        console.log('err',err)
+    } catch (err) {
+        console.log('err', err)
     }
 }
 
-// 生成器 + Promise
-function ajax(url,resolve){
+
+function ajax(url, resolve) {
     var xhr = new XMLHttpRequest();
-    xhr.open('get',url)
- 
+    xhr.open('get', url)
+
     xhr.send();
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState === 4 && xhr.status ===200){
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
             resolve(xhr.responseText)
         }
     }
 }
-function request(url){
-    return new Promise(function (resolve,reject) {
-            ajax(url,resolve)
+// 生成器 + Promise
+function request(url) {
+    return new Promise(function (resolve, reject) {
+        ajax(url, resolve)
+    })
+} 
+{
+    request('http://some.url.1/')
+        .then(function (response1) {
+            return request('http://some.url.2/?v=' + response1)
+                .then(function (response2) {
+                    console.log(response2)
+                })
+        })
+}
+
+function run(gen) {
+    var args = [].slice.call(arguments, 1),
+        it;
+    // 在当前上下文中初始化生成器
+    it = gen.apply(this, args);
+    // 返回一个promise用于生成器完成
+    return Promise.resolve()
+        .then(function handleNext(value) {
+            // 对下一个yield出的值运行
+            var next = it.next(value);
+            return (function handleResult(next) {
+                // 生成器运行完毕了吗？
+                if (next.done) {
+                    return next.value;
+                }
+                // 否则继续运行
+                else {
+                    return Promise.resolve(next.value)
+                        .then(
+                            // 成功就恢复异步循环，把决议的值发回生成器
+                            handleNext,
+                            // 如果value是被拒绝的 promise，
+                            // 就把错误传回生成器进行出错处理
+                            function handleErr(err) {
+                                return Promise.resolve(
+                                        it.throw(err)
+
+                                    )
+                                    .then(handleResult);
+                            }
+                        );
+                }
+            })(next);
+        });
+}
+
+{
+    function* foo() {
+        var r2 = yield request('http://some.url.2');
+        var r3 = yield request('http://some.url.3/?v=' + r2);
+
+        return r3
+    }
+
+    function* bar() {
+        var r1 = yield request('http://some.url.1');
+
+        var r3 = yield run(foo);
+
+        console.log(r3);
+    }
+
+    run(bar);
+} 
+{
+    function* foo() {
+        var r2 = yield request("http://some.url.2");
+        var r3 = yield request("http://some.url.3/?v=" + r2);
+        return r3;
+    }
+
+    function* bar() {
+        var r1 = yield request("http://some.url.1");
+        // 通过 yeild* "委托"给*foo()
+        var r3 = yield* foo();
+        console.log(r3);
+    }
+    run(bar);
+}
+{
+    var res = [];
+    function *reqData(url){
+        yield;
+
+        res.push(data);
+    }
+
+    var it1 = reqData('http://some.url.1');
+    var it2 = reqData('http://some.url.2');
+
+    var p1 = it.next();
+    var p2 = it.next();
+}
+{
+    // 通信顺序进程
+    runAll(function *(data){
+        data.res = [];
+        var url1 = yield 'http://some.url.2';
+
+        var p1 = request(url1);
+        yield;
+
+        data.res.push(yield p1);
+    },function*(data){
+        var url2 = yield 'http://some.url.1';
+        var p2 = request(url2);
+        yield 
+        data.res.push(yield p2);
     })
 }
+
 {
     request('http://some.url.1/')
         .then(function(response1){
@@ -339,7 +447,7 @@ function request(url){
         }
         catch(err){
 
-        }
+        } 
     }
     main()
 
