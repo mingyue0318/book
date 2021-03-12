@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content" ondrop="drop(event)" ondragover="allowDrop(event);" />
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            const files = ev.dataTransfer.files;
+            console.log(
+                files
+            ); // [{{name: "1.jpg",lastModified: 1594369580771...},{name:'2.jpg',lastModified: 1596012406708...}]
+            console.log(files instanceof FileList); // true
+        }
+    </script>
+    <style type="text/css">
+        #content {
+            width: 500px;
+            height: 500px;
+            border: 1px solid brown;
+        }
+    </style>
+
+    <input type="file" id='f' />
+    <script>
+        document.getElementById('f').addEventListener('change', function (e) {
+            var file = this.files[0];
+            // 首先，需要创建一个FileReader的实例。
+            const reader = new FileReader();
+            reader.onload = function () {
+                // 在加载完成时回调
+                const content = reader.result;
+                console.log(content);
+            }
+            reader.readAsText(file); // 将blob转化为文本字符串读取
+        }, false);
+    </script>
+
+    <div id="contents">
+        <input type="file" multiple id="foo" />
+    </div>
+    <script>
+        const elem = document.getElementById('foo');
+        const content = document.getElementById('contents');
+
+        // 根据不同浏览器封装一个转换BlobUrl的方法:file可以是File对象也可以是Blob对象
+        const getObjectURL = (file) => {
+            let url;
+            if (window.createObjectURL) {
+                url = window.createObjectURL(file);
+            } else if (window.URL) {
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL) {
+                url = window.webkitURL.createObjectURL(file);
+            }
+            return url;
+        };
+
+        elem.onchange = function (event) {
+            const files = event.target.files;
+            const file = files[0];
+            const img = document.createElement('img');
+            img.src = getObjectURL(file);
+            content.appendChild(img);
+        };
+    </script>
+    <button onclick="download()">download.txt</button>
+
+    <script>
+        const getObjectURL = (file) => {
+            let url;
+            if (window.createObjectURL) {
+                url = window.createObjectURL(file);
+            } else if (window.URL) {
+                url = window.URL.createObjectURL(file);
+            } else if (window.webkitURL) {
+                url = window.webkitURL.createObjectURL(file);
+            }
+            return url;
+        };
+
+        function download() {
+            const fileName = 'download.txt';
+            const myBlob = new Blob(['johnYu'], {
+                type: 'text/plain'
+            });
+            downloadFun(fileName, myBlob);
+        }
+
+        function downloadFun(fileName, blob) {
+            const link = document.createElement('a');
+            link.href = getObjectURL(blob);
+            link.download = fileName;
+            link.click();
+            link.remove();
+            URL.revokeObjectURL(link.href);
+        }
+    </script>
+</body>
+
+</html>

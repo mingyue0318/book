@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="download()">download.txt</button>
+
+<script>
+     const getObjectURL = (file) => {
+       let url;
+       if (window.createObjectURL) {
+         url = window.createObjectURL(file);
+       } else if (window.URL) {
+         url = window.URL.createObjectURL(file);
+       } else if (window.webkitURL) {
+         url = window.webkitURL.createObjectURL(file);
+       }
+       return url;
+     };
+     function download() {
+       const fileName = 'download.txt';
+       const myBlob = new Blob(['johnYu'], { type: 'text/plain' });
+       downloadFun(fileName, myBlob);
+     }
+     function downloadFun(fileName, blob) {
+       const link = document.createElement('a');
+       link.href = getObjectURL(blob);
+       link.download = fileName;
+       link.click();
+       link.remove();
+       URL.revokeObjectURL(link.href);
+     }
+   </script>
+</body>
+</html>
