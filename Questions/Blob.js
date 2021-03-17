@@ -90,7 +90,8 @@ new Blob(blobParts, options);
 
 
 {
-    数据缓冲区 {
+    数据缓冲区 
+    {
         Buffer
         // Buffer是Node.js提供的对象,前端没有
     } {
@@ -264,14 +265,14 @@ new Blob(blobParts, options);
 
 }
 {
-    BolbURL
-    DataURL
-        区别
-        BlobUrl始终是唯一字符串,即时你每次传递相同的Blob,每次也会生成不同的BlobUrl;DataUrl值跟随blob变化
-        就BlobUrl而言,它并不代表数据本身,数据存储在浏览器中,BlobUrl只是访问它的key.数据会一直有效,直到关闭浏览器或者手动清除.而DataUrl是直接编码的数据本身.因此即使将BlobUrl传递给服务器等也无法访问数据.关闭浏览器后仍然可以在地址栏访问后DataUrl,但是访问不到BlobUrl
-        BlobUrl的长度一般比较短,但DataUrl因为直接存储图片base64编码后的数据,往往很长\(Base64编码的数据体积通常会比二进制格式的图片体积大1/3.\)+ 因此当显式大图片时,使用BlobUrl能获取更好的可能性,速度和内存比DataUrl更有效
-        BlobUrl可以方便的使用XMLHttpRequest获取源数据(xhr.responseType = 'blob').对于DataUrl,并不是所有浏览器都支持通过XMLHttpRequest获取源数据的
-        BlobUrl除了可以用作图片资源的网络地址，BlobUrl也可以用作其他资源的网络地址，例如html文件、json文件等，为了保证浏览器能正确的解析BlobUrl返回的文件类型，需要在创建Blob对象时指定相应的type
+    // BolbURL
+    // DataURL
+    //     区别
+    //     BlobUrl始终是唯一字符串,即时你每次传递相同的Blob,每次也会生成不同的BlobUrl;DataUrl值跟随blob变化
+    //     就BlobUrl而言,它并不代表数据本身,数据存储在浏览器中,BlobUrl只是访问它的key.数据会一直有效,直到关闭浏览器或者手动清除.而DataUrl是直接编码的数据本身.因此即使将BlobUrl传递给服务器等也无法访问数据.关闭浏览器后仍然可以在地址栏访问后DataUrl,但是访问不到BlobUrl
+    //     BlobUrl的长度一般比较短,但DataUrl因为直接存储图片base64编码后的数据,往往很长\(Base64编码的数据体积通常会比二进制格式的图片体积大1/3.\)+ 因此当显式大图片时,使用BlobUrl能获取更好的可能性,速度和内存比DataUrl更有效
+    //     BlobUrl可以方便的使用XMLHttpRequest获取源数据(xhr.responseType = 'blob').对于DataUrl,并不是所有浏览器都支持通过XMLHttpRequest获取源数据的
+    //     BlobUrl除了可以用作图片资源的网络地址，BlobUrl也可以用作其他资源的网络地址，例如html文件、json文件等，为了保证浏览器能正确的解析BlobUrl返回的文件类型，需要在创建Blob对象时指定相应的type
 
 }
 

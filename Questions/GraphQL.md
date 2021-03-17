@@ -13,4 +13,6 @@
     一个GraphQL服务仅暴露一个 GraphQL Endpoint，可以按照业务来进行区分，部署多个GraphQL服务，分管不同的业务数据，这样就可以避免单服务器压力过大的问题了
 
     https://mp.weixin.qq.com/s/qkk9qkh5CGurlV4RK5sNAA
+vue + GraphGL
+    https://mp.weixin.qq.com/s/RspUDIwhjYww6aGxycpMIg
 ```
