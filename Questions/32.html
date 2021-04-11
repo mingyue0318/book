@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-08 17:44:49
+ * @LastEditTime: 2021-04-08 18:00:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /book/Questions/32.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="div()">
+        <p onclick="p(this)" id="pp">
+          Click here!
+        </p>
+      </div>
+</body>
+<script>
+function div(){
+    
+    console.log('div')
+}
+function p(e){
+    console.log(e)
+    e.stopPropagation()
+    console.log('p')
+}
+pp.onclick = function(e){
+    // 冒泡
+    e.stopPropagation()
+    console.log(e.target);
+}
+console.log()
+</script>
+</html>
