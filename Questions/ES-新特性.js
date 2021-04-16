@@ -58,6 +58,10 @@ let name = '小豪'
 const arr = [];
 
 
+// ------------------函数特性
+// https://mp.weixin.qq.com/s/ZdwwOI9vNdBeO3Q7jx-v-w
+
+
 // ES7 (2016)
 // 1. Array.prototype.includes()
 [1].includes(1); // true
