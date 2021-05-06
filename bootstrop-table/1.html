@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrop-table.css">
+
+</head>
+
+<body>
+    <div style="width:780px;margin:0 auto">
+        <table id="table1234" data-filter-control="true"></table>
+
+
+    </div>
+
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/bootstrop-table.js"></script>
+<script>
+    var res = {
+        "ret": 0,
+        "message": "SUCCESS",
+        "data": [{
+                "_id": {
+                    "$oid": "607d23d72139f65a4d50e537"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-28 19:00:00",
+                "remainCount": 0,
+                "code": 78980737,
+                "permission": 4,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:31:51",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d23d52139f659871246ab"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-28 19:00:00",
+                "remainCount": 1,
+                "code": 12415064,
+                "permission": 4,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:31:49",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d228d2139f659871246a3"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 87043899,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:21",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d228b2139f66008327997"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 86625307,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:19",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d228a2139f673841d56ed"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 77472633,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:18",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d22852139f62b6b109862"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 61646099,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:13",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d22832139f67cec78a579"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 45328558,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:11",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d22822139f65984628b07"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 42631334,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:10",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d22822139f65a4d50e52f"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 39581245,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:10",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d22812139f659871246a1"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 26667624,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:09",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d227f2139f66008327995"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 01:00:00",
+                "remainCount": 1,
+                "code": 98401648,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:26:07",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d22602139f60b2e68f40f"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 84226422,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:36",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225f2139f67cec78a577"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 29357311,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:35",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225f2139f659880e319b"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 60437907,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:35",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225e2139f659865791c5"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 17286634,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225e2139f673841d56eb"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 47834288,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225e2139f66008327993"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 54002561,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225e2139f6598712469f"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 38483437,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225e2139f65984628b05"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 69893178,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225e2139f659850d557b"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 83246561,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225e2139f65a4d50e52d"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 12608258,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225e2139f6883f40853f"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 81201687,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225d2139f60b2e68f40d"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 87687778,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:33",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225d2139f62b6b10985f"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 50362940,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:33",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d225c2139f659880e3199"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 17934582,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:32",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d22572139f65a4d50e52b"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:25:00",
+                "remainCount": 1,
+                "code": 51580136,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:25:27",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d221d2139f6883f40853a"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-29 14:24:00",
+                "remainCount": 1,
+                "code": 38459450,
+                "permission": 4,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:24:29",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e72139f659865791c0"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 24895700,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:35",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e72139f673841d56e7"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 65814348,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:35",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e72139f65984628b00"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 61240422,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:35",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e72139f67cec78a573"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 76859977,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:35",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e62139f6600832798c"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 18922621,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e62139f60b2e68f407"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 89818567,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e62139f62b6b109859"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 55568376,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e62139f6598712469a"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 72099019,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:34",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e52139f659880e3194"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 47368465,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:33",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21e32139f6883f408536"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 36675317,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:31",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d21d92139f65984628afe"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-27 14:22:00",
+                "remainCount": 1,
+                "code": 36510937,
+                "permission": 512,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:23:21",
+                "type": 1
+            },
+            {
+                "_id": {
+                    "$oid": "607d1ef32139f659880e3186"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 3,
+                "expireTime": "2021-04-29 14:10:00",
+                "remainCount": 3,
+                "code": 71896946,
+                "permission": 516,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:10:59",
+                "type": 0
+            },
+            {
+                "_id": {
+                    "$oid": "607d1ecf2139f673841d56da"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 3,
+                "expireTime": "2021-04-29 14:10:00",
+                "remainCount": 3,
+                "code": 98555868,
+                "permission": 516,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-19 06:10:23",
+                "type": 0
+            },
+            {
+                "_id": {
+                    "$oid": "60793c972139f659871244ee"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-28 14:54:00",
+                "remainCount": 1,
+                "code": 89220232,
+                "permission": 4,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-16 07:28:23",
+                "type": 0
+            },
+            {
+                "_id": {
+                    "$oid": "60793a7f2139f659871244e4"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-28 14:54:00",
+                "remainCount": 1,
+                "code": 61531568,
+                "permission": 4,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-16 07:19:27",
+                "type": 0
+            },
+            {
+                "_id": {
+                    "$oid": "607936fe2139f659871244d1"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-28 14:54:00",
+                "remainCount": 1,
+                "code": 44338748,
+                "permission": 516,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-16 07:04:30",
+                "type": 0
+            },
+            {
+                "_id": {
+                    "$oid": "607936312139f659850d53b9"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 1,
+                "expireTime": "2021-04-28 14:54:00",
+                "remainCount": 1,
+                "code": 55331567,
+                "permission": 516,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-16 07:01:05",
+                "type": 0
+            },
+            {
+                "_id": {
+                    "$oid": "607936182139f60b2e68f256"
+                },
+                "cDocId": "https://cws-fz01.connectedpdf.com/cDocID/CE2BC6DE-287E-4A3D-7A46-358BDF1344DF",
+                "validCount": 3,
+                "expireTime": "2021-05-26 11:12:01",
+                "remainCount": 3,
+                "code": 58204197,
+                "permission": 516,
+                "casId": "607549562da6cd184cd0d2f3",
+                "createTime": "2021-04-16 07:00:40",
+                "type": 0
+            }
+        ],
+        "returned": 45
+    }
+    window.operateEvents = {
+        // 当点击 class=delete 时触发
+        'click .delete': function (e, value, row, index) {
+            // 在 console 打印出整行数据
+            console.log(row);
+        }
+    };
+    var data = res.data
+    $('#table1234').bootstrapTable('destroy');
+    // var tableColumns = 
+    $('#table1234').bootstrapTable({
+        // url: '/frontend/bootstrap-table/user.json',         //请求后台的 URL（*）
+        // method: 'get',                      //请求方式（*）
+        data: data, //当不使用上面的后台请求时，使用data来接收数据
+        toolbar: '#toolbar', //工具按钮用哪个容器
+        striped: true, //是否显示行间隔色
+        // cache: false,                       //是否使用缓存，默认为 true，所以一般情况下需要设置一下这个属性（*）
+        pagination: true, //是否显示分页（*）
+        // sortable: false,                    //是否启用排序
+        // sortOrder: "asc",                   //排序方式
+        // sidePagination: "client",           //分页方式：client 客户端分页，server 服务端分页（*）
+        pageNumber: 1, //初始化加载第一页，默认第一页
+        pageSize: 5, //每页的记录行数（*）
+        // pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
+        search: true, //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以个人感觉意义不大
+        // strictSearch: true,                 //启用严格搜索。禁用比较检查。
+        // showColumns: true,                  //是否显示所有的列
+        showRefresh: true, //是否显示刷新按钮
+        // minimumCountColumns: 2,             //最少允许的列数
+        // clickToSelect: true,                //是否启用点击选中行
+        // height: 500,                        //行高，如果没有设置 height 属性，表格自动根据记录条数觉得表格高度
+        // showToggle:true,                    //是否显示详细视图和列表视图的切换按钮
+        // cardView: false,                    //是否显示详细视图
+        // detailView: false,                  //是否显示父子表
+        // showExport: true,                   //是否显示导出
+        // exportDataType: "basic",            //basic', 'all', 'selected'.
+        uniqueId: 'userId', //为每一行指定唯一标识符
+        idField: 'userId', //指定主键列
+        columns: [{
+                title: '序号',
+                align: 'center',
+                halign: 'center',
+                formatter: function (value, row, index) {
+                    //   var options = $table.bootstrapTable('getOptions');
+                    //   console.log(options)
+                    //   return options.pageSize * (options.pageNumber - 1) + index + 1;
+                    return index + 1;
+                }
+            },
+            {
+                field: 'code',
+                title: '授权码',
+                align: 'center',
+                halign: 'center',
+                sortable: true,
+                formatter: function (value, row, index) {
+                    return '<span id="code">'+row.code +'</span>';
+                }
+            },
+            {
+                field: 'state',
+                title: '状态',
+                align: 'center',
+                halign: 'center',
+                sortable: true,
+                formatter: function (value, row, index) {
+                    // console.log(value,row,index)
+                    var createTime = +new Date(row.createTime)
+                    var expireTime = +new Date(row.expireTime)
+                    var remainCount = row.remainCount
+                    if (expireTime - createTime > 0 && row.remainCount > 0) {
+                        return '<span style="background: green;color: #fff;    padding: 2px 3px">有效</span>'
+                    }
+                    return '<span style="background: red;color: #fff;    padding: 2px 3px">无效</span>'
+                    //   var options = $table.bootstrapTable('getOptions');
+                    //   console.log(options)
+                    //   return options.pageSize * (options.pageNumber - 1) + index + 1;
+                    return index + 1;
+                }
+            },
+            {
+                field: 'createTime',
+                title: '创建日期',
+                align: 'center',
+                halign: 'center',
+                sortable: true
+            },
+            {
+                field: 'expireTime',
+                align: 'center',
+                halign: 'center',
+                title: '过期时间',
+                sortable: true
+            },
+            {
+                field: 'remainCount',
+                title: '剩余次数',
+                align: 'center',
+                halign: 'center',
+                sortable: true
+            },
+            {
+                field: 'operation',
+                align: 'center',
+                halign: 'center',
+                title: '操作',
+                sortable: true,
+                formatter: function (value, row, index) {
+                    // console.log(value,row,index)
+                    // console.log(value)
+                    // console.log(row)
+                    // console.log(index)
+                    var code = row.code
+                    return '<span style="color:#F08538;cursor: pointer;" >复制链接以及授权码</span>';
+                }
+            }
+        ],
+        onClickCell: function (field, value, row, $element) {
+            console.log(field)
+            console.log(value)
+            console.log(row)
+            console.log($element.id)
+            // if()
+        },
+        responseHandler: function (res) {
+            return res.data //在加载远程数据之前，处理响应数据格式.
+            // 我们取的值在data字段中，所以需要先进行处理，这样才能获取我们想要的结果
+        }
+    });
+    $('#table1234').bootstrapTable('refresh');
+
+    function clicks(row) {
+        alert(1111)
+        document.execCommand(row.code)
+    }
+</script>
+
+</html>
