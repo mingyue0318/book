@@ -39,3 +39,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     谈谈Vue 和 React 区别和选型考虑
 ```
 
+```
+
+手把手教你写一个Vue组件发布到npm且可外链引入使用
+https://mp.weixin.qq.com/s/vfOmxqSRSbZQbDt9yGUrUA
+```
+

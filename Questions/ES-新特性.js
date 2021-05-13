@@ -213,6 +213,7 @@ Promise.any
 WeakRef
 逻辑赋值运算符
 数字分隔符
+Finalizers = FinalizationRegistry
 
 
 // String.prototype.replaceAll
@@ -289,3 +290,22 @@ setTimeout(() => element.remove(), 10000);
 
 1_000_000_000           // 十亿
 101_475_938.38 
+
+// FinalizationRegistry
+
+// 创建 FinalizationRegistry:
+const reg = new FinalizationRegistry((val) => {
+    console.log(val)
+  })
+  
+  ;(() => {
+    // 创建新对象:
+    const obj = {}
+  
+    //为 “obj” 对象注册 finalizer：
+    //第一个参数：要为其注册 finalizer 的对象。
+    //第二个参数：上面定义的回调函数的值。
+    reg.register(obj, 'obj has been garbage-collected.')
+  })()
+  // 当 "obj" 被gc回收时输出：
+  // 'obj has been garbage-collected.'
