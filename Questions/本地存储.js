@@ -1,3 +1,8 @@
+//  Cookie/Session/Token
+// https://mp.weixin.qq.com/s/yJAygqZHRPZBZj9hO5_f6g
+
+
+
 //1 cookie
 // 为了解决 HTTP 协议无状态特性的问题
             // 用户的两次 HTTP 请求，服务端并不能通过请求本身，知道这两次请求，来自于同一个用户
@@ -51,3 +56,10 @@ Secure, HttpOnly
     //     只能存入字符串，无法直接存对象
 
 //3 indexedDB
+
+
+
+
+
+
+

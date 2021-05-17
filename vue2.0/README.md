@@ -43,5 +43,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 手把手教你写一个Vue组件发布到npm且可外链引入使用
 https://mp.weixin.qq.com/s/vfOmxqSRSbZQbDt9yGUrUA
+
+真正的手摸手带你实现 Vue 组件库
+https://mp.weixin.qq.com/s/T2-O8mZmg0CYCx7MsqhbGA
 ```
 
