@@ -47,4 +47,7 @@ https://mp.weixin.qq.com/s/vfOmxqSRSbZQbDt9yGUrUA
 真正的手摸手带你实现 Vue 组件库
 https://mp.weixin.qq.com/s/T2-O8mZmg0CYCx7MsqhbGA
 ```
-
+```
+    源码解读
+    https://mp.weixin.qq.com/s/OQGN_qoAqdubf-DwdJQ4kw
+```
