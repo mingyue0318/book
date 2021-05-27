@@ -10,3 +10,6 @@ const colorConfig = {
   const colors = ["pink", "red", "blue"]
   
   console.log(colorConfig.colors[1])
+
+
+  
