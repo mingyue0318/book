@@ -1,3 +1,7 @@
+// 控制台
+// https://blog.teamtreehouse.com/mastering-developer-tools-console
+// console
+
 // https://mp.weixin.qq.com/s/pp56PSMLmrAV2iqLnngHcQ 待续...
 
 // 1、输入一个值，返回其数据类型**
