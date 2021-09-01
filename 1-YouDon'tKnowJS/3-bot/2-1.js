@@ -12,7 +12,7 @@
 
 // 函数运行完成后，仍然可以继续访问函数的作用域
 
-// 最常见 模块模式
+// 最常见 模块模式(闭包)
 
 function user(){
     var username,password;
@@ -29,3 +29,18 @@ function user(){
 var fred = user();
 
 fred.login('wuxiaoyu','Aa@12345')
+
+this
+
+// 4种调用
+// 全局
+// 调用者
+// call、apply 修改指定对象
+// new Object()  
+
+
+
+原型
+
+构建行为委托
+
